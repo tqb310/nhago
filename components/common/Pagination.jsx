@@ -1,4 +1,4 @@
-function LandingPage({ index, active, setActive }) {
+function PaginationItem({ index, active, setActive }) {
     return (
         <div
             className={
@@ -14,13 +14,13 @@ function LandingPage({ index, active, setActive }) {
     );
 }
 
-function LandingPages({
-    length,
-    landingVisionIndex,
+function Pagination({
+    handleTurnPage,
     itemsPerPage,
-    landingIndex,
-    handleLandingIndex,
-    handleLandingVision,
+    landingVisionIndex,
+    page,
+    length,
+    handleVisiblePageItem,
     countOfPageVision = 10,
 }) {
     return (
@@ -50,14 +50,13 @@ function LandingPages({
                         : countOfPageVision,
                 ),
                 (a, b) => (
-                    <LandingPage
+                    <PaginationItem
                         key={b}
                         index={landingVisionIndex * countOfPageVision + b}
                         active={
-                            landingVisionIndex * countOfPageVision + b ==
-                            landingIndex
+                            landingVisionIndex * countOfPageVision + b == page
                         }
-                        setActive={handleLandingIndex}
+                        setActive={handleTurnPage}
                     />
                 ),
             )}
@@ -71,7 +70,7 @@ function LandingPages({
                         ? 'hidden'
                         : '')
                 }
-                onClick={() => handleLandingVision(1)}
+                onClick={() => handleVisiblePageItem(1)}
             >
                 »
             </div>
@@ -79,4 +78,5 @@ function LandingPages({
     );
 }
 
-export default LandingPages;
+export default Pagination;
+

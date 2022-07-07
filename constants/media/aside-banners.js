@@ -1,4 +1,4 @@
-export const asideBanner = [
+const asideBanners = [
     {
         type: 'image',
         link: '1zKBlQ0tf9gp6LRGQcmglc0n9uZvDgT2s',
@@ -28,3 +28,5 @@ export const asideBanner = [
         link: '1c556zFThUwxXIVzU28KjbTZ2yw_dldC8',
     },
 ];
+
+export default asideBanners;

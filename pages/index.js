@@ -1,58 +1,20 @@
 // import { useState, useEffect } from 'react';
-import GridLayoutMauNha, { Item } from 'components/common/gridLayoutMauNha';
-import Head from 'next/head';
+import Slides, { SlideItem } from 'components/common/Slides';
 import Image from 'next/image';
-import About from 'components/home/About';
+import About from 'components/pages/home/About';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper';
-import Commit from 'components/home/Commit';
-import Trait from 'components/home/Trait';
+import Commitment from 'components/pages/home/Commitment';
+import Trait from 'components/pages/home/Trait';
 import Title from 'components/common/Title';
-import { projectMedia } from '../constants/du-an-da-lam';
-import { referenceThumbnail } from 'constants/thu-vien-tu-lieu';
-
-// const images = ['/main-banner1.jpg', '/main-banner2.jpg', '/main-banner3.jpg'];
-
-const ServicesData = [
-    {
-        id: 1,
-        title: 'Tư vấn và thiết kế nhà gỗ',
-        description:
-            'Chúng tôi cung cấp dịch vụ thiết kế tận tâm đến khách hàng. Với quy trình phát triển dự án rõ ràng chúng tôi mong muốn mang lại chất lượng tốt nhất ...',
-        linkImage: '/images/Avata_dich_vu/3.jpg',
-        link: 'tu-van-thiet-ke-nha-go',
-    },
-    {
-        id: 2,
-        title: 'Thi công nhà gỗ',
-        description:
-            'Sau khi chốt ý tưởng, thống nhất với khách hàng về thiết kế, chúng tôi tiến hành các bước trong thi công ...',
-        linkImage: '/images/Avata_dich_vu/2.jpg',
-        link: 'thi-cong-nha-go',
-    },
-    {
-        id: 3,
-        title: 'Thiết kế và thi công nội thất',
-        description:
-            'Thiết kế thi công nội thất theo yêu cầu của khách hàng là một trong những dịch vụ cốt lõi của Nhà Gỗ Ba Miền chúng tôi ...',
-        linkImage: '/images/Avata_dich_vu/1.jpg',
-        link: 'thiet-ke-va-thi-cong-noi-that',
-    },
-];
+import {
+    banners,
+    projectsThumbnails,
+    referenceThumbnails,
+    services,
+} from '../constants/media';
 
 export default function Home() {
-    const dataMediaService = projectMedia.filter(
-        (_item) => _item.slug == 'dich-vu-cung-cap',
-    )[0].media;
-
-    const dataMediaBannerChinh = projectMedia.filter(
-        (_item) => _item.slug == 'banner-chinh',
-    )[0].media;
-
-    const dataMediaBannerService = projectMedia.filter(
-        (_item) => _item.slug == 'avatar',
-    )[0].media;
-
     return (
         <div className='relative'>
             {/* begin::Banner */}
@@ -66,8 +28,8 @@ export default function Home() {
                     loop={true}
                     pagination={{ clickable: true }}
                 >
-                    {dataMediaBannerChinh &&
-                        dataMediaBannerChinh.map((value, index) => (
+                    {banners &&
+                        banners.map((value, index) => (
                             <SwiperSlide key={index}>
                                 <div className='w-full min-h-[300px] md:min-h-[400px] lg:min-h-[calc(100vh_-_280px)]'>
                                     <Image
@@ -108,19 +70,18 @@ export default function Home() {
             <div className='bg-sub-background-color py-10'>
                 <Title title='Dịch vụ cung cấp' />
                 <div className='flex flex-col sm:flex-row justify-between items-center h-[300] w-full lg:w-3/4 m-auto'>
-                    {ServicesData.map((_item, _index) => (
+                    {services.map((_item, _index) => (
                         <div
                             key={_index}
                             className='h-[350px] w-full sm:w-[500px] mx-[15px] mt-[50px] '
                         >
-                            <Item
+                            <SlideItem
                                 params={{
                                     title: _item.title,
                                     description: _item.description || '',
-                                    link: '',
-                                    linkImage: `https://drive.google.com/uc?export=view&id=${dataMediaService[_index].link}`,
-                                    mode: 'dich-vu',
-                                    link: _item.link,
+                                    linkImage: `https://drive.google.com/uc?export=view&id=${_item.linkImage}`,
+                                    columnist: 'dich-vu',
+                                    slug: _item.slug,
                                 }}
                             />
                         </div>
@@ -130,32 +91,28 @@ export default function Home() {
             {/* end::Dichvucungcap */}
             {/* Begin::Motsomaunha */}
             <div className='py-10'>
-                <GridLayoutMauNha
+                <Slides
                     title='Dự án đã làm'
-                    data={dataMediaBannerService}
+                    data={projectsThumbnails}
                     hasPagination
-                    mode='du-an-da-lam'
+                    columnist='du-an-da-lam'
                 />
             </div>
 
             <div className='py-10'>
-                <GridLayoutMauNha
+                <Slides
                     title='Thư viện tư liệu'
-                    data={referenceThumbnail}
+                    data={referenceThumbnails}
                     hasPagination
-                    mode='thu-vien-tu-lieu'
+                    columnist='thu-vien-tu-lieu'
                 />
             </div>
             {/* end::Motsomaunha */}
             {/* begin::5camketvang */}
             <div>
-                <Commit />
+                <Commitment />
             </div>
             {/* end::5camketvang */}
-
-            <style>{`
-           
-            `}</style>
         </div>
     );
 }

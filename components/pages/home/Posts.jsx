@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { useEffect } from 'react';
-import Title from '../common/Title';
-import LandingPages from 'components/common/LandingPages';
+import Title from '../../common/Title';
+import LandingPages from 'components/common/Pagination';
 
 const data = [
     {
@@ -696,3 +696,4 @@ function Posts() {
 }
 
 export default Posts;
+

@@ -1,6 +1,6 @@
 import React from 'react';
-import NewsWrapper from 'components/common/NewsWrapper';
-import ConstructionSteps from 'components/common/ConstructionSteps';
+import { PageLayout } from 'components/layout/Page';
+import ConstructionSteps from 'components/pages/introduction/ConstructionSteps';
 import Head from 'next/head';
 
 function ThiCongNhaGo() {
@@ -14,7 +14,7 @@ function ThiCongNhaGo() {
                     content='Nhà Gỗ Ba Miền là Công Ty Cổ Phần Tư Vấn Thiết Kế Xây Dựng được tín nhiệm nhất tại Việt Nam, cung cấp dịch vụ đóng nhà gỗ trọn gói với giá cả phải chăng.'
                 />
             </Head>
-            <NewsWrapper
+            <PageLayout
                 pathname={{
                     title: 'Thi công nhà gỗ',
                     link: '/dich-vu/thi-cong-nha-go',
@@ -63,7 +63,7 @@ function ThiCongNhaGo() {
                         </address>
                     </div>
                 </div>
-            </NewsWrapper>
+            </PageLayout>
         </>
     );
 }

@@ -4,61 +4,61 @@ const data = [
     {
         step: 1,
         title: 'Khảo sát mặt bằng, lấy ý tưởng khách hàng',
-        imgLink: '/khao-sat-mat-bang.png',
+        imgLink: '/images/process/khao-sat-mat-bang.png',
         alt: 'khao-sat-mat-bang.png',
     },
     {
         step: 2,
         title: 'Tư vấn, thiết kế',
-        imgLink: '/tu-van-thiet-ke.png',
+        imgLink: '/images/process/tu-van-thiet-ke.png',
         alt: 'tu-van-thiet-ke.png',
     },
     {
         step: 3,
         title: 'Chọn gỗ ( chủng loại )',
-        imgLink: '/chongo.png',
+        imgLink: '/images/process/chongo.png',
         alt: 'chongo',
     },
     {
         step: 4,
         title: 'Cắt đầu gỗ ( lễ phạt mộc)',
-        imgLink: '/phatmoc.png',
+        imgLink: '/images/process/phatmoc.png',
         alt: 'phatmoc',
     },
     {
         step: 5,
         title: 'Sàm Đóng',
-        imgLink: '/samdong.png',
+        imgLink: '/images/process/samdong.png',
         alt: 'samdong',
     },
     {
         step: 6,
         title: 'Đục Trạm',
-        imgLink: '/duccham.png',
+        imgLink: '/images/process/duccham.png',
         alt: 'duccham',
     },
     {
         step: 7,
         title: 'Làm lót',
-        imgLink: '/lamlot.png',
+        imgLink: '/images/process/lamlot.png',
         alt: 'lamlot',
     },
     {
         step: 8,
         title: 'Vận chuyển đến công trình',
-        imgLink: '/vanchuyen.png',
+        imgLink: '/images/process/vanchuyen.png',
         alt: 'vanchuyen',
     },
     {
         step: 9,
         title: 'Lắp dựng',
-        imgLink: '/lapdung.png',
+        imgLink: '/images/process/lapdung.png',
         alt: 'lapdung',
     },
     {
         step: 10,
         title: 'Sơn hoàn thiện',
-        imgLink: '/sonhoanthien.png',
+        imgLink: '/images/process/sonhoanthien.png',
         alt: 'sonhoanthien',
     },
 ];
@@ -100,3 +100,4 @@ function ConstructionSteps() {
 }
 
 export default ConstructionSteps;
+

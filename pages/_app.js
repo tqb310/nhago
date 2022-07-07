@@ -1,16 +1,17 @@
-import '../styles/globals.css';
-import Header from 'components/common/header';
-import Footer from 'components/common/footer';
 import { config } from '@fortawesome/fontawesome-svg-core';
-import '@fortawesome/fontawesome-svg-core/styles.css';
 import { useEffect, useState } from 'react';
-import { faLongArrowUp, faPhone } from '@fortawesome/free-solid-svg-icons';
+import { faLongArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import Image from 'next/image';
-import Script from 'next/script';
 import Head from 'next/head';
-import Link from 'next/link';
-// Swiper
+import MainLayout from 'components/layout/Main';
+import SocialContact from 'components/partials/SocialContact';
+
+//Global css
+import '../styles/globals.css';
+//Fontawesome css
+import '@fortawesome/fontawesome-svg-core/styles.css';
+// Swiper css
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
@@ -20,13 +21,8 @@ import 'swiper/css/thumbs';
 import 'swiper/css/effect-cards';
 import 'react-image-gallery/styles/css/image-gallery.css';
 
-//Animation on scrolling
+//Animation on scrolling css
 import 'animate.css';
-import {
-    faFacebookSquare,
-    faYoutube,
-    faYoutubeSquare,
-} from '@fortawesome/free-brands-svg-icons';
 config.autoAddCss = false;
 
 function MyApp({ Component, pageProps, router }) {
@@ -54,60 +50,7 @@ function MyApp({ Component, pageProps, router }) {
         };
     }, []);
     return (
-        <>
-            {/* begin::ScrollToTop */}
-            <button
-                className={`bg-primary-color w-11 h-11 rounded-full flex justify-center 
-          items-center fixed bottom-4 right-6 z-10 ${
-              isVisible ? 'opacity-100' : 'opacity-0'
-          }`}
-                onClick={() => scrollToTop()}
-            >
-                <FontAwesomeIcon icon={faLongArrowUp} color='white' size='lg' />
-            </button>
-            {/* end::ScrollToTop */}
-            {/* begin::SocialMediaButton */}
-            <Link href='https://facebook.com/110707611644240/'>
-                <a
-                    className='fixed z-10 bottom-[122px] right-6 bg-white'
-                    target='_blank'
-                >
-                    <FontAwesomeIcon
-                        icon={faFacebookSquare}
-                        color='#4267B2'
-                        size='3x'
-                    />
-                </a>
-            </Link>
-            <Link href='https://youtube.com/channel/UCXw1ZjGS13Rgjoc2wNlBrrA'>
-                <a
-                    className='fixed z-10 bottom-44 right-6 bg-white'
-                    target='_blank'
-                >
-                    <FontAwesomeIcon
-                        icon={faYoutubeSquare}
-                        color='#FF0000'
-                        size='3x'
-                    />
-                </a>
-            </Link>
-            {/*  begin::phone button */}
-            <Link href='tel:0962116789' passHref>
-                <div className='phone-wrapper fixed top-28 left-16 z-50'>
-                    <div className='flex justify-center items-center'>
-                        <div className='z-50 absolute  bg-[#9BF080] p-3 rounded-full animate-pulse'>
-                            <FontAwesomeIcon
-                                icon={faPhone}
-                                color='#fff'
-                                size='2x'
-                            />
-                        </div>
-                        <div className='h-12 w-12 rounded-full absolute animate-scaling'></div>
-                        <div className='h-12 w-12 rounded-full absolute animate-[scaling_2s_linear_infinite_1s]'></div>
-                    </div>
-                </div>
-            </Link>
-            {/*  end::phone button */}
+        <MainLayout>
             <Head>
                 <title>
                     Nhà gỗ Truyền thống & Nguyên | Nhà thờ - Nhagobamien.vn
@@ -128,47 +71,24 @@ function MyApp({ Component, pageProps, router }) {
                     href='/logo_ng3m.jpg'
                 />
             </Head>
-            <Header />
-            <Component {...pageProps} router={router} />
-            {/* begin::ZaloButton */}
-            <div
-                className='zalo-chat-widget'
-                data-oaid='3764014308364109214'
-                data-welcome-message='Rất vui khi được hỗ trợ bạn!'
-                data-autopopup='3'
-                data-width=''
-                data-height=''
-            ></div>
-            <style>
-                {`
-                    .zalo-chat-widget {
-                        bottom: 65px !important;
-                        right: 16px !important;
-                    }
-                `}
-            </style>
-            {/* end::ZaloButton */}
-            <Script defer src='https://sp.zalo.me/plugins/sdk.js'></Script>
 
-            <Script
-                async
-                src='https://www.googletagmanager.com/gtag/js?id=AW-10932546613'
-            ></Script>
-            <Script
-                id='gtag-analytic'
-                dangerouslySetInnerHTML={{
-                    __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'AW-10932546613}', {
-              page_path: window.location.pathname,
-            });
-          `,
-                }}
-            />
-            <Footer />
-        </>
+            {/* begin::ScrollToTop */}
+            <button
+                className={`bg-primary-color w-11 h-11 rounded-full flex justify-center 
+          items-center fixed bottom-4 right-6 z-10 ${
+              isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+                onClick={() => scrollToTop()}
+            >
+                <FontAwesomeIcon icon={faLongArrowUp} color='white' size='lg' />
+            </button>
+            {/* end::ScrollToTop */}
+
+            {/* begin::SocialContact */}
+            <SocialContact />
+            {/*  end::SocialContact */}
+            <Component {...pageProps} router={router} />
+        </MainLayout>
     );
 }
 

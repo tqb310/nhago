@@ -89,7 +89,7 @@ function Footer() {
                             className=''
                             id='videoPlay'
                         >
-                            <source src='/video.mp4' />
+                            <source src='/videos/video.mp4' />
                         </video>
                     </div>
                 </div>

@@ -1,4 +1,4 @@
-import NewsWrapper from 'components/common/NewsWrapper';
+import PageLayout from 'components/common/PageLayout';
 // import ArticalInsights from 'components/common/ArticleInsights';
 // import Image from 'next/image';
 // import { faEye, faClock } from '@fortawesome/free-regular-svg-icons';
@@ -14,7 +14,7 @@ const ServiceDetail = ({ title, slug, content }) => {
     const htmlContent = marked.parse(content);
     // console.log(htmlContent);
     return (
-        <NewsWrapper pathname={{ title: title, link: asPath }}>
+        <PageLayout pathname={{ title: title, link: asPath }}>
             <p className='text-primary-color font-semibold text-xl text-center p-4 '>
                 {title}
             </p>
@@ -48,7 +48,7 @@ const ServiceDetail = ({ title, slug, content }) => {
                     <a href='mailto:info@nhagobamien.vn'>info@nhagobamien.vn</a>
                 </address>
             </div>
-        </NewsWrapper>
+        </PageLayout>
     );
 };
 

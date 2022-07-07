@@ -1,9 +1,9 @@
 import Image from 'next/image';
-import NewsWrapper from 'components/common/NewsWrapper';
+import { PageLayout } from 'components/layout/Page';
 
 const ContactPage = () => {
     return (
-        <NewsWrapper
+        <PageLayout
             pathname={{ title: 'Liên hệ với chúng tôi', link: '/lien-he' }}
         >
             <div
@@ -118,7 +118,7 @@ const ContactPage = () => {
                         <div className='w-full md:w-1/2 border-1 mt-5 md:mt-1/2 lg:mt-0'>
                             <Image
                                 alt='Van phong chinh'
-                                src={`/images/hinh-anh-van-phong.jpg`}
+                                src={`/images/introduction/hinh-anh-van-phong.jpg`}
                                 layout='responsive'
                                 width={256}
                                 height={205}
@@ -141,7 +141,7 @@ const ContactPage = () => {
                         <div className='w-full md:w-1/2 border-1 mt-5 md:mt-1/2 lg:mt-0'>
                             <Image
                                 alt='Van phong chi nhanh'
-                                src={`/images/hinh-anh-chi-nhanh.jpg`}
+                                src={`/images/introduction/hinh-anh-chi-nhanh.jpg`}
                                 layout='responsive'
                                 width={256}
                                 height={205}
@@ -166,7 +166,7 @@ const ContactPage = () => {
                         <div className='w-full md:w-1/2 border-1 mt-5 md:mt-1/2 lg:mt-0'>
                             <Image
                                 alt='Xuong'
-                                src={`/images/hinh-anh-xuong.jpg`}
+                                src={`/images/introduction/hinh-anh-xuong.jpg`}
                                 layout='responsive'
                                 width={256}
                                 height={205}
@@ -175,7 +175,7 @@ const ContactPage = () => {
                     </div>
                 </div>
             </div>
-        </NewsWrapper>
+        </PageLayout>
     );
 };
 

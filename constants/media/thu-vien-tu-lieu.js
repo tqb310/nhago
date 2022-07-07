@@ -1,4 +1,4 @@
-const references = {
+export const references = {
     'duc-cham': 'Đục chạm',
     'hoan-thanh': 'Hoàn thành',
     'lap-dung': 'Lắp dựng',
@@ -7,42 +7,42 @@ const references = {
     'van-chuyen-den-cong-trinh': 'Vận chuyển đến công trình',
 };
 
-export const referenceThumbnail = [
+export const referenceThumbnails = [
     {
         id: 1,
         title: 'Đúc chạm',
         link: '1IHe-PMohe0f1RIqR_9yHttwlic8EfYEf',
-        name: 'duc-cham',
+        slug: 'duc-cham',
     },
     {
         id: 2,
         title: 'Hoàn thành',
         link: '17Pbbtp4eBVIKi3w2QcN1fFmZoK5XcMkV',
-        name: 'hoan-thanh',
+        slug: 'hoan-thanh',
     },
     {
         id: 3,
         title: 'Lắp dựng',
         link: '11b0JMkMDq_zaBd_LPGDER8_0R2eMa4aZ',
-        name: 'lap-dung',
+        slug: 'lap-dung',
     },
     {
         id: 4,
         title: 'Nhập gỗ',
         link: '1wLCYOWwKihNbn4MV6qD8Y4bVN5LnC8pH',
-        name: 'nhap-go',
+        slug: 'nhap-go',
     },
     {
         id: 5,
         title: 'Sàm gỗ',
         link: '1PXSTFU39vRKKP-8YXNONkHwSMcgVKvaB',
-        name: 'sam-go',
+        slug: 'sam-go',
     },
     {
         id: 6,
         title: 'Vận chuyển đến công trình',
         link: '1Z3hBEkdkbbbPFwu3-EZa2xVBOESOe2MY',
-        name: 'van-chuyen-den-cong-trinh',
+        slug: 'van-chuyen-den-cong-trinh',
     },
 ];
 export const referenceMediaFiles = [

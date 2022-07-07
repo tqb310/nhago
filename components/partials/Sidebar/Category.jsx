@@ -1,15 +1,9 @@
-import Title from '../Title';
+import Title from '../../common/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretRight } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
-const datas = [
-    { title: 'MẪU NHÀ SÀN', link: '' },
-    { title: 'MẪU NHÀ HIỆN ĐẠI', link: '' },
-    { title: 'MẪU NHÀ CỔ TRUYỀN', link: '' },
-    { title: 'MẪU NHÀ LỤC GIÁC', link: '' },
-    { title: 'MẪU NHÀ TỪ ĐƯỜNG', link: '' },
-];
-function Category({ title = '', data = datas, activePath }) {
+
+function Category({ title = '', data = [], activePath }) {
     return (
         <div>
             <Title title={title} size={'xl'} />

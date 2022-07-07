@@ -23,7 +23,7 @@ const Commit = () => {
     );
 
     return (
-        <div className="w-full min-h-64 bg-[url('../public/banner4.png')] flex flex-col justify-center items-center py-6 bg-no-repeat bg-cover">
+        <div className="w-full min-h-64 bg-[url('/images/services/pic1.jpg')] flex flex-col justify-center items-center py-6 bg-no-repeat bg-cover">
             <div className='text-white text-xl sm:text-2xl md:text-3xl text-extrabold uppercase my-2'>
                 5 cam kết của nhà gỗ ba miền
             </div>

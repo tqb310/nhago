@@ -1,5 +1,5 @@
 import React from 'react';
-import NewsWrapper from 'components/common/NewsWrapper';
+import { PageLayout } from 'components/layout/Page';
 import Image from 'next/image';
 import Head from 'next/head';
 
@@ -19,7 +19,7 @@ function TuVanThietKeNhaGo() {
                     content='Nhà Gỗ Ba Miền là công ty thiết kế nội thất và xây dựng đáng tin cậy cung cấp dịch vụ thiết kế nội thất gia đình và kiến trúc nhà ở. Gọi cho chúng tôi ngay.'
                 />
             </Head>
-            <NewsWrapper
+            <PageLayout
                 pathname={{
                     title: 'Tư vấn thiết kế nhà gỗ',
                     link: '/dich-vu/tu-van-thiet-ke-nha-go',
@@ -41,7 +41,7 @@ function TuVanThietKeNhaGo() {
                         <div className='flex justify-center flex-col'>
                             <div className='w-full xl:h-[500px] h-[200px]  relative overflow-hidden'>
                                 <Image
-                                    src='/gap-go-khach-hang.png'
+                                    src='/images/services/gap-go-khach-hang.png'
                                     alt='gap go khach hang'
                                     layout='fill'
                                     objectFit={'contain'}
@@ -57,7 +57,7 @@ function TuVanThietKeNhaGo() {
                         <div className='flex justify-center flex-col'>
                             <div className='w-full xl:h-[480px] h-[200px]  relative overflow-hidden'>
                                 <Image
-                                    src='/khao-sat-dia-hinh-thuc-te.png'
+                                    src='/images/services/khao-sat-dia-hinh-thuc-te.png'
                                     alt='khao-sat-dia-hinh-thuc-te'
                                     layout='fill'
                                     objectFit={'contain'}
@@ -76,7 +76,7 @@ function TuVanThietKeNhaGo() {
                         <div className='flex justify-center flex-col'>
                             <div className='w-full xl:h-[780px] h-[350px]  relative overflow-hidden'>
                                 <Image
-                                    src='/len-y-tuong.png'
+                                    src='/images/services/len-y-tuong.png'
                                     alt='len-y-tuong'
                                     layout='fill'
                                     objectFit={'contain'}
@@ -91,7 +91,7 @@ function TuVanThietKeNhaGo() {
                         <div className='flex justify-center flex-col'>
                             <div className='w-full xl:h-[430px] h-[200px]  relative overflow-hidden'>
                                 <Image
-                                    src='/y-tuong-3d.png'
+                                    src='/images/services/y-tuong-3d.png'
                                     alt='y-tuong-3d'
                                     layout='fill'
                                     objectFit={'contain'}
@@ -107,7 +107,7 @@ function TuVanThietKeNhaGo() {
                         <div className='flex justify-center flex-col'>
                             <div className='w-full xl:h-[380px] h-[200px]  relative overflow-hidden'>
                                 <Image
-                                    src='/chot-y-tuong.png'
+                                    src='/images/services/chot-y-tuong.png'
                                     alt='chot-y-tuong'
                                     layout='fill'
                                     objectFit={'contain'}
@@ -149,7 +149,7 @@ function TuVanThietKeNhaGo() {
                         </address>
                     </div>
                 </div>
-            </NewsWrapper>
+            </PageLayout>
         </>
     );
 }

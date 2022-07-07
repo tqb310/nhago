@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
-import NewsWrapper from 'components/common/NewsWrapper';
-import NewsCard from 'components/common/NewsCard';
+import PostCard from 'components/common/PostCard';
 import { useRouter } from 'next/router';
-import LandingPages from 'components/common/LandingPages';
+import Pagination from 'components/common/Pagination';
+import { PageLayout } from 'components/layout/Page';
 
 const data = [
     {
@@ -118,37 +118,39 @@ const data = [
 ];
 const AllNews = () => {
     const { pathname } = useRouter();
-    const [landingIndex, setLandingIndex] = useState(0);
+    const [page, setPage] = useState(0);
     const [landingVisionIndex, setLandingVisionIndex] = useState(0);
-    const handleLandingIndex = (index) => {
-        setLandingIndex(index);
+    const handleTurnPage = (index) => {
+        setPage(index);
     };
-    const handleLandingVision = (action) => {
+    const handleVisiblePageItem = (action) => {
         setLandingVisionIndex(landingVisionIndex + action);
     };
+
     useEffect(() => {
-        setLandingIndex(landingVisionIndex * 10);
+        setPage(landingVisionIndex * 10);
     }, [landingVisionIndex]);
+
     return (
-        <NewsWrapper pathname={{ title: 'Tin tức', link: pathname }}>
+        <PageLayout pathname={{ title: 'Tin tức', link: pathname }}>
             <p className='text-primary-color font-bold text-xl text-center p-4 '>
                 TIN TỨC
             </p>
             <div className='flex flex-wrap'>
                 {data &&
                     data.map((item, index) => (
-                        <NewsCard key={index} item={item} />
+                        <PostCard key={index} item={item} />
                     ))}
             </div>
-            <LandingPages
-                handleLandingIndex={handleLandingIndex}
+            <Pagination
+                handleTurnPage={handleTurnPage}
                 itemsPerPage={10}
                 landingVisionIndex={landingVisionIndex}
-                landingIndex={landingIndex}
+                page={page}
                 length={20}
-                handleLandingVision={handleLandingVision}
+                handleVisiblePageItem={handleVisiblePageItem}
             />
-        </NewsWrapper>
+        </PageLayout>
     );
 };
 

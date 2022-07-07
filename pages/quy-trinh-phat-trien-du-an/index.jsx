@@ -1,11 +1,9 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import NewsWrapper from 'components/common/NewsWrapper';
-import ConstructionSteps from 'components/common/ConstructionSteps';
+import { PageLayout } from 'components/layout/Page';
+import ConstructionSteps from 'components/pages/introduction/ConstructionSteps';
 
 const Introduction = () => {
     return (
-        <NewsWrapper
+        <PageLayout
             pathname={{
                 title: 'Quy trình phát triển dự án',
                 link: '/quy-trinh-phat-trien-du-an',
@@ -18,7 +16,7 @@ const Introduction = () => {
                 <p className='text-lg'>Các Công đoạn triển khai Công trình</p>
                 <ConstructionSteps />
             </div>
-        </NewsWrapper>
+        </PageLayout>
     );
 };
 

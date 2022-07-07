@@ -181,7 +181,7 @@ export default function Header() {
             <div className='lg:flex-row lg:justify-between lg:items-center flex flex-col items-stretch container px-8 py-3'>
                 <div className='self-center'>
                     <Image
-                        src='/logo_ng3m.jpg'
+                        src='/images/logo_ng3m.jpg'
                         alt='logo website'
                         width={170.6666}
                         height={148.6666}

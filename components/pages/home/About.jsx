@@ -1,11 +1,10 @@
 import React from 'react';
-// import Banner from 'components/home/Banner';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Autoplay, EffectCube } from 'swiper';
 import Image from 'next/image';
 import Title from 'components/common/Title';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
-import { asideBanner } from 'constants/hinh-anh-va-video';
+import { asideBanners } from 'constants/media';
 
 function About() {
     return (
@@ -33,8 +32,8 @@ function About() {
                             shadowScale: 0.94,
                         }}
                     >
-                        {asideBanner &&
-                            asideBanner.map((value, index) => (
+                        {asideBanners &&
+                            asideBanners.map((value, index) => (
                                 <SwiperSlide key={index}>
                                     <div className='w-full lg:h-[240px] xl:h-[300px]'>
                                         <Image

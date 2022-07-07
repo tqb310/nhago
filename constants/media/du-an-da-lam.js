@@ -1,4 +1,4 @@
-const projects = {
+export const projects = {
     'nha-5-gian': 'Nhà 5 gian',
     'nha-3-gian': 'Nhà 3 gian',
     'nha-8-mai-co-dien': 'Nhà 8 mái cổ điển',
@@ -9,111 +9,54 @@ const projects = {
     'do-tho': 'Đồ thờ',
 };
 
-export const projectMedia = [
+export const projectsThumbnails = [
     {
         id: 1,
-        title: 'Dịch vụ',
-        slug: 'dich-vu-cung-cap',
-        media: [
-            {
-                type: 'image',
-                link: '14tTvbe0KDl0VA3WB-jzldRx7U-LTWZR1',
-            },
-            {
-                type: 'image',
-                link: '1DIjRXR6gHvFJJc1lje7XHpU4ZfZKqxdJ',
-            },
-            {
-                type: 'image',
-                link: '1aNuN9lHl6qS-mxBcjH0GBvejUw_hmOrj',
-            },
-        ],
+        slug: 'cong-go',
+        title: 'Cổng gỗ',
+        link: '1nu6jDy_hD2YixgxUNFNwyosSKPg-CoLH',
     },
     {
         id: 2,
-        title: 'Banner chính',
-        slug: 'banner-chinh',
-        media: [
-            {
-                type: 'image',
-                link: '1MA76pnRPDNyCiJQBHt47zbfrYeyWh4l4',
-            },
-            {
-                type: 'image',
-                link: '1KTVZXOlor4pJNUsfyVbz87v5ZJctL4Uh',
-            },
-            {
-                type: 'image',
-                link: '1dCiqNcceXq76o5Smf6HSg0EROBGxmJCX',
-            },
-            {
-                type: 'image',
-                link: '1FoW2OixpTjVbOSQ_5yjg9ns4ZZFGOuo_',
-            },
-            {
-                type: 'image',
-                link: '1_1-Iav37mZPwKw2-SYS0i6ItcTPpv-WK',
-            },
-            {
-                type: 'image',
-                link: '1pXFaSVanOaw65Hqyo5wHlxmb51jifF-2',
-            },
-        ],
+        slug: 'do-tho',
+        title: 'Đồ thờ',
+        link: '13TN7d2V6PE8kRVZybrhyjk5SjmV4KI8U',
     },
     {
         id: 3,
-        title: 'Dự án đã làm',
-        slug: 'avatar',
-        media: [
-            {
-                name: 'cong-go',
-                title: 'Cổng gỗ',
-                type: 'image',
-                link: '1nu6jDy_hD2YixgxUNFNwyosSKPg-CoLH',
-            },
-            {
-                name: 'do-tho',
-                title: 'Đồ thờ',
-                type: 'image',
-                link: '13TN7d2V6PE8kRVZybrhyjk5SjmV4KI8U',
-            },
-            {
-                name: 'nha-cau',
-                title: 'Nhà cầu',
-                type: 'image',
-                link: '1Pa67vGYJdAS7Y78_qXdZnCFYokR2nOrX',
-            },
-            {
-                name: 'nha-co-8-mai',
-                title: 'Nhà cổ 8 mái',
-                type: 'image',
-                link: '1XRRdq_DFLH_1nNE4mH2Uimf__qI5Kw1A',
-            },
-            {
-                name: 'nha-luc-giac',
-                title: 'Nhà lục giác',
-                type: 'image',
-                link: '1vZmObmpOaE2TCvd-I_sdCN4ik2tqOpcC',
-            },
-            {
-                name: 'noi-that',
-                title: 'Nội thất',
-                type: 'image',
-                link: '13qqG0acAWpN5zrcxnpnZ9a0MW3ZUjsaQ',
-            },
-            {
-                name: 'nha-3-gian',
-                title: 'Nhà 3 gian',
-                type: 'image',
-                link: '1Daxk2jyU7PNTPlKbDG8tM24jNE0-NOgV',
-            },
-            {
-                name: 'nha-5-gian',
-                title: 'Nhà 5 gian',
-                type: 'image',
-                link: '1Ryu1PNXCUneHW7RTHOmTqcc4kr28u3MI',
-            },
-        ],
+        slug: 'nha-cau',
+        title: 'Nhà cầu',
+        link: '1Pa67vGYJdAS7Y78_qXdZnCFYokR2nOrX',
+    },
+    {
+        id: 4,
+        slug: 'nha-co-8-mai',
+        title: 'Nhà cổ 8 mái',
+        link: '1XRRdq_DFLH_1nNE4mH2Uimf__qI5Kw1A',
+    },
+    {
+        id: 5,
+        slug: 'nha-luc-giac',
+        title: 'Nhà lục giác',
+        link: '1vZmObmpOaE2TCvd-I_sdCN4ik2tqOpcC',
+    },
+    {
+        id: 6,
+        slug: 'noi-that',
+        title: 'Nội thất',
+        link: '13qqG0acAWpN5zrcxnpnZ9a0MW3ZUjsaQ',
+    },
+    {
+        id: 7,
+        slug: 'nha-3-gian',
+        title: 'Nhà 3 gian',
+        link: '1Daxk2jyU7PNTPlKbDG8tM24jNE0-NOgV',
+    },
+    {
+        id: 8,
+        slug: 'nha-5-gian',
+        title: 'Nhà 5 gian',
+        link: '1Ryu1PNXCUneHW7RTHOmTqcc4kr28u3MI',
     },
 ];
 
@@ -203,7 +146,6 @@ export const projectMediaFiles = [
                 type: 'video',
                 link: '1vxLaPhVYFK72T6H12pktcx5KynKQKVph',
             },
-
             {
                 type: 'image',
                 link: '13Fh90dW5Dm7d6GjHmEFawhqgWuvh-A0Y',

@@ -1,4 +1,4 @@
-import NewsWrapper from 'components/common/NewsWrapper';
+import { PageLayout } from 'components/layout/Page';
 import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
@@ -17,7 +17,7 @@ function Furniture() {
                     content='Nhà Gỗ Ba Miền là công ty thiết kế nội thất và xây dựng đáng tin cậy cung cấp dịch vụ thiết kế nội thất gia đình và kiến trúc nhà ở. Gọi cho chúng tôi ngay.'
                 />
             </Head>
-            <NewsWrapper
+            <PageLayout
                 pathname={{
                     title: 'Thiết kế và thi công nội thất',
                     link: 'thiet-ke-va-thi-cong-noi-that',
@@ -29,9 +29,7 @@ function Furniture() {
                 <div className='mt-8 mb-16 after:clear-left after:table'>
                     <div className='float-right ml-5'>
                         <Image
-                            src={
-                                '/images/services/thiet-ke-thi-cong-noi-that/pic1.jpg'
-                            }
+                            src={'/images/services/pic1.jpg'}
                             alt='Thiet ke thi cong noi that 1'
                             height={204}
                             width={272}
@@ -52,9 +50,7 @@ function Furniture() {
                     <div className='clear-right py-4'></div>
                     <div className='float-left mr-5'>
                         <Image
-                            src={
-                                '/images/services/thiet-ke-thi-cong-noi-that/pic2.jpg'
-                            }
+                            src={'/images/services/pic2.jpg'}
                             alt='Thiet ke thi cong noi that 1'
                             height={272}
                             width={272}
@@ -96,7 +92,7 @@ function Furniture() {
                         </a>
                     </address>
                 </div>
-            </NewsWrapper>
+            </PageLayout>
         </>
     );
 }

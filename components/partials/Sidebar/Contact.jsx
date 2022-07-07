@@ -1,4 +1,4 @@
-import Title from '../Title';
+import Title from '../../common/Title';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, fa1, fa2 } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
@@ -7,7 +7,7 @@ const data = [
     { name: 'Mr. Cuong', phone: '096.211.6789', icon: fa1 },
     { name: 'Mr. Manh', phone: '0977.325.651', icon: fa2 },
 ];
-function Support() {
+function Contact() {
     return (
         <div>
             <Title title={'Hỗ trợ'} size={'xl'} />
@@ -40,5 +40,5 @@ function Support() {
     );
 }
 
-export default Support;
+export default Contact;
 

@@ -1,8 +1,7 @@
-import PageLayout from 'components/common/PageLayout';
+import { PageLayout } from 'components/layout/page';
 // import NewsCard from 'components/common/NewsCard';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
-import { PageLayout } from 'components/layout/Page';
 
 const AllServices = () => {
     const { pathname } = useRouter();

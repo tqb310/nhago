@@ -1,4 +1,4 @@
-import PageLayout from 'components/common/PageLayout';
+import { PageLayout } from 'components/layout/Page';
 // import ArticalInsights from 'components/common/ArticleInsights';
 // import Image from 'next/image';
 // import { faEye, faClock } from '@fortawesome/free-regular-svg-icons';

@@ -56,7 +56,7 @@ function SocialContact() {
             {/* begin::ZaloButton */}
             <div
                 className='zalo-chat-widget'
-                data-oaid='3764014308364109214'
+                data-oaid={process.env.DATA_OAID}
                 data-welcome-message='Rất vui khi được hỗ trợ bạn!'
                 data-autopopup='3'
                 data-width=''

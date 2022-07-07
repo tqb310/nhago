@@ -2,7 +2,7 @@ import React from 'react';
 import Album from 'components/common/Album';
 import Breadcrumb from 'components/common/Breadcrumb';
 import Head from 'next/head';
-import projects, { projectMediaFiles } from 'constants/media/du-an-da-lam';
+import { projects, projectMediaFiles } from 'constants/media';
 // import fs from 'fs';
 // import path from 'path';
 

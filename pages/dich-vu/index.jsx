@@ -1,4 +1,4 @@
-import { PageLayout } from 'components/layout/page';
+import { PageLayout } from 'components/layout/Page';
 // import NewsCard from 'components/common/NewsCard';
 import { useRouter } from 'next/router';
 import Image from 'next/image';

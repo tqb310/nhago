@@ -3,7 +3,7 @@ import React from 'react';
 // import path from 'path';
 import Album from 'components/common/Album';
 import Breadcrumb from 'components/common/Breadcrumb';
-import references, { referenceMediaFiles } from 'constants/thu-vien-tu-lieu';
+import { references, referenceMediaFiles } from 'constants/media';
 
 function ReferencesAlbum({ data, title, slug }) {
     return (

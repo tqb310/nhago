@@ -1,10 +1,10 @@
-import { referenceMediaFiles } from 'constants/media';
+import { referenceThumbnails } from 'constants/media';
 import Grid from 'components/common/Grid';
 
 const AllReferences = () => {
     return (
         <Grid
-            data={referenceMediaFiles}
+            data={referenceThumbnails}
             columnist='thu-vien-tu-lieu'
             title='Thư viện tư liệu'
         />

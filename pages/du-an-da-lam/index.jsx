@@ -1,4 +1,4 @@
-import { projectMediaFiles } from 'constants/media';
+import { projectsThumbnails } from 'constants/media';
 import Grid from 'components/common/Grid';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 // import { faListSquares, faBars } from '@fortawesome/free-solid-svg-icons';
@@ -6,7 +6,7 @@ import Grid from 'components/common/Grid';
 const AllProjects = () => {
     return (
         <Grid
-            data={projectMediaFiles}
+            data={projectsThumbnails}
             columnist='du-an-da-lam'
             title='Các dự án đã làm'
         />

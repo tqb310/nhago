@@ -3,8 +3,9 @@ import PostCard from 'components/common/PostCard';
 import { useRouter } from 'next/router';
 import Pagination from 'components/common/Pagination';
 import { PageLayout } from 'components/layout/Page';
+import * as postService from 'services/post.service';
 
-const data = [
+const data1 = [
     {
         id: 1,
         title: 'Các mẫu nhà gỗ cổ đẹp nhất Việt Nam nơi gìn giữ văn hóa Việt.',
@@ -116,7 +117,7 @@ const data = [
             'Làm thế nào để bạn có thể sở hữu được một không gian sống thoải mái và tiện nghi? Bạn cũng sẽ muốn một ngôi nhà thể hiện được đúng cá tính, sở thích riêng và thỏa mãn được mong muốn của gia đình mình...',
     },
 ];
-const AllNews = () => {
+const AllNews = ({ posts }) => {
     const { pathname } = useRouter();
     const [page, setPage] = useState(0);
     const [landingVisionIndex, setLandingVisionIndex] = useState(0);
@@ -137,8 +138,8 @@ const AllNews = () => {
                 TIN TỨC
             </p>
             <div className='flex flex-wrap'>
-                {data &&
-                    data.map((item, index) => (
+                {posts &&
+                    posts.map((item, index) => (
                         <PostCard key={index} item={item} />
                     ))}
             </div>
@@ -155,4 +156,14 @@ const AllNews = () => {
 };
 
 export default AllNews;
+
+export const getStaticProps = async (context) => {
+    const posts = (await postService.getAllPosts()) || [];
+
+    return {
+        props: {
+            posts,
+        },
+    };
+};
 

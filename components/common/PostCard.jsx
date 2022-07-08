@@ -13,7 +13,7 @@ function NewsCard({ item }) {
             <div className='w-full md:w-1/2 p-8 border-t-[1px] border-dotted border-primary-color'>
                 <Tooltip title={item.title}>
                     <Image
-                        src={item.imgLink}
+                        src={item?.featuredImage.url}
                         alt='anh dich vu 1'
                         width={375}
                         height={275}
@@ -24,13 +24,14 @@ function NewsCard({ item }) {
                         {item.title}
                     </p>
                     <p className='text-[0.8rem] text-gray-400 mt-3'>
-                        <PostFigures data={item.createAt} icon={faClock} />
-                        <PostFigures data={item.views} icon={faEye} />
-                        <PostFigures data={item.tag} icon={faServicestack} />
+                        <PostFigures
+                            data={new Date(item.createdAt).toLocaleDateString()}
+                            icon={faClock}
+                        />
+                        {/* <PostFigures data={item.views} icon={faEye} />
+                        <PostFigures data={item.tag} icon={faServicestack} /> */}
                     </p>
-                    <p className='mt-2 text-gray-600 text-sm'>
-                        {item.description}
-                    </p>
+                    <p className='mt-2 text-gray-600 text-sm'>{item.excerpt}</p>
                 </Tooltip>
             </div>
         </Link>

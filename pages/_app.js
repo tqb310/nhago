@@ -68,7 +68,7 @@ function MyApp({ Component, pageProps, router }) {
                     rel='icon'
                     type='image/jpg'
                     sizes='64x64'
-                    href='/logo_ng3m.jpg'
+                    href='/images/logo_ng3m.jpg'
                 />
             </Head>
 

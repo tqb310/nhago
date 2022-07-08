@@ -6,7 +6,11 @@ const nextConfig = {
 module.exports = {
     nextConfig,
     images: {
-        domains: ['nhagoanphu.com', 'drive.google.com'],
+        domains: [
+            'nhagoanphu.com',
+            'drive.google.com',
+            'media.graphassets.com',
+        ],
         formats: ['image/avif', 'image/webp'],
     },
 };

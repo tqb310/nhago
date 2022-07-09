@@ -1,16 +1,15 @@
 import React from 'react';
 import Image from 'next/image';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faClock } from '@fortawesome/free-regular-svg-icons';
-import { faServicestack } from '@fortawesome/free-brands-svg-icons';
+import { faClock } from '@fortawesome/free-regular-svg-icons';
 import PostFigures from './PostFigures';
 import Link from 'next/link';
 import Tooltip from './Tooltip';
 
-function NewsCard({ item }) {
+function PostCard({ item }) {
     return (
-        <Link href={'#'} passHref>
-            <div className='w-full md:w-1/2 p-8 border-t-[1px] border-dotted border-primary-color'>
+        <Link href={'/tin-tuc/' + item.slug} passHref>
+            <div className='group w-full md:w-1/2 p-8 border-t-[1px] border-dotted border-primary-color cursor-pointer'>
                 <Tooltip title={item.title}>
                     <Image
                         src={item?.featuredImage.url}
@@ -20,10 +19,10 @@ function NewsCard({ item }) {
                         className='cursor-pointer'
                         loading='lazy'
                     />
-                    <p className='text-primary-color text-lg font-medium mt-2 cursor-pointer hover:text-green-700'>
+                    <p className='text-primary-color text-lg font-medium mt-2 cursor-pointer group-hover:text-green-700'>
                         {item.title}
                     </p>
-                    <p className='text-[0.8rem] text-gray-400 mt-3'>
+                    <p className='text-[0.8rem] mt-3'>
                         <PostFigures
                             data={new Date(item.createdAt).toLocaleDateString()}
                             icon={faClock}
@@ -38,4 +37,4 @@ function NewsCard({ item }) {
     );
 }
 
-export default NewsCard;
+export default PostCard;

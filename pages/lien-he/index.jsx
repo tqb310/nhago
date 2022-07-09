@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import { PageLayout } from 'components/layout/Page';
+import * as postService from 'services/post.service';
 
-const ContactPage = () => {
+const ContactPage = ({ posts }) => {
     return (
         <PageLayout
             pathname={{ title: 'Liên hệ với chúng tôi', link: '/lien-he' }}
+            posts={posts}
         >
             <div
                 className='pl-4 pt-4 pr-4 w-full  flex flex-col text-center 
@@ -46,7 +48,7 @@ const ContactPage = () => {
                     >
                         Thông tin liên hệ
                     </h1>
-                    <div className='flex flex-col md:grid grid-cols-4 grid-rows-4 gap-x-2 gap-y-5 text-sm md:text-base'>
+                    <div className='flex flex-col md:grid grid-cols-4 grid-rows-4 gap-x-4 gap-y-5 text-sm md:text-base'>
                         <div className='col-span-2'>
                             <input
                                 placeholder='Họ và tên (*)'
@@ -54,7 +56,7 @@ const ContactPage = () => {
                                     px-5 py-1 w-full'
                             />
                         </div>
-                        <div className='row-span-3 col-span-2'>
+                        <div className='row-span-4 col-span-2'>
                             <textarea
                                 placeholder='Nội dung (*)'
                                 className='border-solid border border-slate-400
@@ -81,19 +83,6 @@ const ContactPage = () => {
                                 className='border-solid border border-slate-400
                                     px-5 py-1 w-full'
                             />
-                        </div>
-                        <div className='col-span-1'>
-                            <input
-                                placeholder='Nhập mã Capcha (*)'
-                                className='border-solid border border-slate-400
-                                    px-5 py-1 w-full'
-                            />
-                        </div>
-                        <div
-                            className='col-span-1 border border-[#000] border-solid font-bold 
-                            flex justify-center items-center'
-                        >
-                            a125636
                         </div>
                         <div className='bg-lime-500 col-start-4 px-5 py-2 rounded-lg'>
                             <button className='font-bold w-10/12'>
@@ -180,3 +169,13 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
+
+export const getStaticProps = async (context) => {
+    const posts = (await postService.getRecentPost(5)) || [];
+
+    return {
+        props: {
+            posts,
+        },
+    };
+};

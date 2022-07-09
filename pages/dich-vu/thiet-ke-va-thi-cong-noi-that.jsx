@@ -2,8 +2,9 @@ import { PageLayout } from 'components/layout/Page';
 import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
+import * as postService from 'services/post.service';
 
-function Furniture() {
+function Furniture({ posts }) {
     return (
         <>
             <Head>
@@ -22,6 +23,7 @@ function Furniture() {
                     title: 'Thiết kế và thi công nội thất',
                     link: 'thiet-ke-va-thi-cong-noi-that',
                 }}
+                posts={posts}
             >
                 <h1 className='text-primary-color font-black text-2xl text-center py-8'>
                     Thiết kế và thi công nội thất
@@ -98,3 +100,13 @@ function Furniture() {
 }
 
 export default Furniture;
+
+export const getStaticProps = async (context) => {
+    const posts = (await postService.getRecentPost(5)) || [];
+
+    return {
+        props: {
+            posts,
+        },
+    };
+};

@@ -2,8 +2,9 @@ import React from 'react';
 import { PageLayout } from 'components/layout/Page';
 import Image from 'next/image';
 import Head from 'next/head';
+import * as postService from 'services/post.service';
 
-function TuVanThietKeNhaGo() {
+function TuVanThietKeNhaGo({ posts }) {
     return (
         <>
             <Head>
@@ -24,6 +25,7 @@ function TuVanThietKeNhaGo() {
                     title: 'Tư vấn thiết kế nhà gỗ',
                     link: '/dich-vu/tu-van-thiet-ke-nha-go',
                 }}
+                posts={posts}
             >
                 <div className=''>
                     <h2 className='text-primary-color font-black text-2xl text-center py-8'>
@@ -155,4 +157,14 @@ function TuVanThietKeNhaGo() {
 }
 
 export default TuVanThietKeNhaGo;
+
+export const getStaticProps = async (context) => {
+    const posts = (await postService.getRecentPost(5)) || [];
+
+    return {
+        props: {
+            posts,
+        },
+    };
+};
 

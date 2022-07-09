@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    faFacebookSquare,
-    faYoutube,
-    faYoutubeSquare,
-} from '@fortawesome/free-brands-svg-icons';
+import { faFacebook, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import { faPhone } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Link from 'next/link';
@@ -14,25 +10,27 @@ function SocialContact() {
         <div>
             <Link href='https://facebook.com/110707611644240/'>
                 <a
-                    className='fixed z-10 bottom-[122px] right-6 bg-white'
+                    className='fixed z-10 bottom-[92px] left-[25.5px] before:w-11 before:h-11 before:bg-white before:absolute before:left-1/2 before:-translate-x-1/2 before:rounded-full before:z-0'
                     target='_blank'
                 >
                     <FontAwesomeIcon
-                        icon={faFacebookSquare}
+                        icon={faFacebook}
                         color='#4267B2'
                         size='3x'
+                        className='relative z-20'
                     />
                 </a>
             </Link>
             <Link href='https://youtube.com/channel/UCXw1ZjGS13Rgjoc2wNlBrrA'>
                 <a
-                    className='fixed z-10 bottom-44 right-6 bg-white'
+                    className='fixed z-10 bottom-40 left-[22px] before:w-6 before:h-6 before:bg-white before:absolute before:left-1/2 before:-translate-x-1/2 before:top-1/4 before:rounded-full before:z-0'
                     target='_blank'
                 >
                     <FontAwesomeIcon
-                        icon={faYoutubeSquare}
+                        icon={faYoutube}
                         color='#FF0000'
                         size='3x'
+                        className='relative z-20'
                     />
                 </a>
             </Link>
@@ -65,8 +63,8 @@ function SocialContact() {
             <style>
                 {`
                     .zalo-chat-widget {
-                        bottom: 65px !important;
-                        right: 16px !important;
+                        bottom: 20px !important;
+                        left: 19px !important;
                     }
                 `}
             </style>

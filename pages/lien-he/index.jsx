@@ -1,18 +1,44 @@
 import Image from 'next/image';
 import { PageLayout } from 'components/layout/Page';
 import * as postService from 'services/post.service';
+import { useForm } from 'react-hook-form';
 
 const ContactPage = ({ posts }) => {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        watch,
+    } = useForm();
+    const onSubmit = async (values) => {
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(values),
+            });
+            if (response.status === 200) {
+                alert('Gửi mail thành công');
+            } else {
+                alert('Gửi mail thất bại');
+            }
+        } catch (error) {
+            throw error;
+        }
+    };
+
     return (
         <PageLayout
             pathname={{ title: 'Liên hệ với chúng tôi', link: '/lien-he' }}
             posts={posts}
         >
             <div
-                className='pl-4 pt-4 pr-4 w-full  flex flex-col text-center 
+                className='pl-4 pt-4 pr-4 w-full flex flex-col
                     justify-center items-center '
             >
-                <div className='w-full bg-gray-200 px-4 py-4'>
+                <div className='w-full bg-gray-200 px-4 py-4 text-center'>
                     <h1
                         className='text-red-600'
                         style={{ fontSize: 24, fontWeight: 700 }}
@@ -48,33 +74,70 @@ const ContactPage = ({ posts }) => {
                     >
                         Thông tin liên hệ
                     </h1>
-                    <div className='flex flex-col md:grid grid-cols-4 grid-rows-4 gap-x-4 gap-y-5 text-sm md:text-base'>
-                        <div className='col-span-2'>
+                    <form
+                        onSubmit={handleSubmit(onSubmit)}
+                        className='flex flex-col md:grid grid-cols-4 grid-rows-4 gap-x-4 gap-y-5 text-sm md:text-base'
+                    >
+                        <div className='col-span-2 fo'>
                             <input
                                 placeholder='Họ và tên (*)'
                                 className='border-solid border border-slate-400
                                     px-5 py-1 w-full'
+                                {...register('name', {
+                                    required: {
+                                        value: true,
+                                        message: 'Bạn chưa nhập tên',
+                                    },
+                                })}
                             />
+                            {errors.name?.message && (
+                                <p className='text-red-500 mt-[2px] text-sm'>
+                                    {errors.name?.message}
+                                </p>
+                            )}
                         </div>
                         <div className='row-span-4 col-span-2'>
                             <textarea
                                 placeholder='Nội dung (*)'
                                 className='border-solid border border-slate-400
                                     px-5 py-1 w-full h-full'
+                                {...register('content', {
+                                    required: {
+                                        value: true,
+                                        message: 'Bạn chưa nhập nội dung',
+                                    },
+                                })}
                             />
+                            {errors.content?.message && (
+                                <p className='text-red-500 mt-[2px] text-sm'>
+                                    {errors.content?.message}
+                                </p>
+                            )}
                         </div>
                         <div className='col-span-2'>
                             <input
                                 placeholder='Email (*)'
                                 className='border-solid border border-slate-400
-                                    px-5 py-1 w-full'
+                                px-5 py-1 w-full'
+                                {...register('email', {
+                                    required: {
+                                        value: true,
+                                        message: 'Bạn chưa nhập emai',
+                                    },
+                                })}
                             />
+                            {errors.email?.message && (
+                                <p className='text-red-500 mt-[2px] text-sm'>
+                                    {errors.email?.message}
+                                </p>
+                            )}
                         </div>
                         <div className='col-span-2'>
                             <input
                                 placeholder='Địa chỉ'
                                 className='border-solid border border-slate-400
                                     px-5 py-1 w-full'
+                                {...register('address')}
                             />
                         </div>
                         <div className='col-span-2'>
@@ -82,14 +145,25 @@ const ContactPage = ({ posts }) => {
                                 placeholder='Số điện thoại (*)'
                                 className='border-solid border border-slate-400
                                     px-5 py-1 w-full'
+                                {...register('phone', {
+                                    required: {
+                                        value: true,
+                                        message: 'Bạn chưa nhập số điện thoại',
+                                    },
+                                })}
                             />
+                            {errors.phone?.message && (
+                                <p className='text-red-500 mt-[2px] text-sm'>
+                                    {errors.phone?.message}
+                                </p>
+                            )}
                         </div>
                         <div className='bg-lime-500 col-start-4 px-5 py-2 rounded-lg'>
-                            <button className='font-bold w-10/12'>
+                            <button type='submit' className='font-bold w-10/12'>
                                 Gửi đi
                             </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
                 <div className='w-full p-3'>
                     <p className='text-lg text-[#EBC804] font-medium mb-2'>

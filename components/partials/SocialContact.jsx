@@ -10,7 +10,7 @@ function SocialContact() {
         <div>
             <Link href='https://facebook.com/110707611644240/'>
                 <a
-                    className='fixed z-10 bottom-[92px] left-[25.5px] before:w-11 before:h-11 before:bg-white before:absolute before:left-1/2 before:-translate-x-1/2 before:rounded-full before:z-0'
+                    className='fixed z-10 bottom-[93px] left-[25.5px] before:w-11 before:h-11 before:bg-white before:absolute before:left-1/2 before:-translate-x-1/2 before:rounded-full before:z-0'
                     target='_blank'
                 >
                     <FontAwesomeIcon
@@ -64,7 +64,7 @@ function SocialContact() {
                 {`
                     .zalo-chat-widget {
                         bottom: 20px !important;
-                        left: 19px !important;
+                        left: 23px !important;
                     }
                 `}
             </style>

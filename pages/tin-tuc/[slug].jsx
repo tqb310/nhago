@@ -53,7 +53,7 @@ export async function getStaticPaths() {
     const allSlugs = (await postService.getAllPostSlugs()) || [];
     return {
         paths: allSlugs.map((item) => ({ params: { slug: item.slug } })),
-        fallback: false,
+        fallback: 'blocking',
     };
 }
 
@@ -61,7 +61,11 @@ export async function getStaticProps(context) {
     const { params } = context;
     const postDetail = (await postService.getPostDetail(params.slug)) || {};
     const recentPosts = (await postService.getRecentPost(5)) || [];
-
+    if (!postDetail.slug) {
+        return {
+            notFound: true,
+        };
+    }
     return {
         props: {
             postDetail,

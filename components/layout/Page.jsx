@@ -18,11 +18,11 @@ function PageLayout({ children, pathname, posts }) {
                 />
             </div>
 
-            <div className='hidden sm:block col-span-3 border-r-[1px] border-gray-300 py-4 pr-1 md:pr-5'>
+            <div className='hidden md:block col-span-3 border-r-[1px] border-gray-300 py-4 pr-1 md:pr-5'>
                 <Sidebar posts={posts} />
             </div>
 
-            <div className='col-span-12 sm:col-span-9 border-l-[1px] border-gray-300 py-8 px-5 md:px-8'>
+            <div className='col-span-12 md:col-span-9 border-l-[1px] border-gray-300 py-8 px-5 md:px-8'>
                 {children}
             </div>
         </div>

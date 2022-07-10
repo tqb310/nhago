@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { faClock } from '@fortawesome/free-regular-svg-icons';
 import PostFigures from './PostFigures';
 import Link from 'next/link';
+import { formatDate } from 'helpers';
 import Tooltip from './Tooltip';
 
 function PostCard({ item }) {
@@ -24,7 +25,9 @@ function PostCard({ item }) {
                     </p>
                     <p className='text-[0.8rem] mt-3'>
                         <PostFigures
-                            data={new Date(item.createdAt).toLocaleDateString()}
+                            data={formatDate(
+                                new Date(item.createdAt).toLocaleDateString(),
+                            ).format('d/m/y')}
                             icon={faClock}
                         />
                         {/* <PostFigures data={item.views} icon={faEye} />

@@ -2,13 +2,17 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import { useEffect, useState } from 'react';
 import { faLongArrowUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// import Image from 'next/image';
 import Head from 'next/head';
 import MainLayout from 'components/layout/Main';
 import SocialContact from 'components/partials/SocialContact';
-
+import Router from 'next/router';
+import nProgress from 'nprogress';
+nProgress.configure({
+    showSpinner: false,
+});
 //Global css
 import '../styles/globals.css';
+import '../styles/nprogress.css';
 //Fontawesome css
 import '@fortawesome/fontawesome-svg-core/styles.css';
 // Swiper css
@@ -20,10 +24,13 @@ import 'swiper/css/effect-cube';
 import 'swiper/css/thumbs';
 import 'swiper/css/effect-cards';
 import 'react-image-gallery/styles/css/image-gallery.css';
-
 //Animation on scrolling css
 import 'animate.css';
 config.autoAddCss = false;
+
+Router.events.on('routeChangeStart', nProgress.start);
+Router.events.on('routeChangeError', nProgress.done);
+Router.events.on('routeChangeComplete', nProgress.done);
 
 function MyApp({ Component, pageProps, router }) {
     // Set toggle for button scroll to top

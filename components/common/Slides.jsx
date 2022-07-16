@@ -4,7 +4,6 @@ import Title from 'components/common/Title';
 // import { faPhoneFlip } from '@fortawesome/free-solid-svg-icons';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination, Navigation, Autoplay } from 'swiper';
-import { useRouter } from 'next/router';
 import { AnimationOnScroll } from 'react-animation-on-scroll';
 import Link from 'next/link';
 

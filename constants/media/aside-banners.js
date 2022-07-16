@@ -15,18 +15,6 @@ const asideBanners = [
         type: 'image',
         link: '1MwuudxrscQjqB3c6P2vIch4RMHM9vbKk',
     },
-    {
-        type: 'image',
-        link: '1gnpIp3YOC-hijVyBh0izGl3Iw3S3XAdW',
-    },
-    {
-        type: 'image',
-        link: '1v604SZCt4n1B1ByAgQ45HN8bNTpDqN0k',
-    },
-    {
-        type: 'image',
-        link: '1c556zFThUwxXIVzU28KjbTZ2yw_dldC8',
-    },
 ];
 
 export default asideBanners;
